@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB DE ADRYGOFIO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Sekuya&display=swap" rel="stylesheet">
+
+<style>
+    @keyframes pan {
+	0% {
+		background-position: 0% 0em;
+	}
+	100% {
+		background-position: 200% 100em;
+	}
+}
+html {
+    font-family: "Darumadrop One", sans-serif;
+    font-style: normal;
+    font-size: 200%;
+    
+}
+
+:root{
+    --deck-color:#f7f4ec;
+    --paper:#f5ecd1;
+    --text:#2a2a2a;
+    --accent:#4a7c59;
+    --border:#222;
+    --min-page-width: 1280px;
+    --max-page-width: 2000px;
+    --avg-page-width: 80%;
+}
+header{
+    text-align: center;
+    border:3px solid var(--border);
+    background:var(--deck-color);
+    padding: 25px;
+}
+header h2{
+    margin-bottom: 20px;
+}
+h1, h2, h3, h4, h5{
+    margin: auto;
+}
+h1{
+    font-size: 3rem;
+}
+body{
+    width:clamp(1280px, 80%, 2000px);
+    margin:auto;
+    padding:30px;
+    
+    background:var(--deck-color);
+    color:var(--text);
+    line-height:1.4;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg transform='translate(40 40) rotate(18)'%3E%3Cpath d='M0-18L4.7-5.8L17.1-5.6L7.5 2.2L11.2 14L0 7.5L-11.2 14L-7.5 2.2L-17.1-5.6L-4.7-5.8Z' fill='%23ffffffff' stroke='%23ffffffff' stroke-width='0.0' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 10%;
+    background-color: #0f172a;
+    /*animation-name: pan;
+	animation-duration: 180s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;*/
+}
+
+*{
+    box-sizing:border-box;
+}
+.deck{
+    display: grid;
+}
+.deck-header{
+    margin-bottom: 50px;
+    text-align: center;
+}
+nav a{
+    text-decoration:none;
+    margin:0 12px;
+}
+nav a:hover{
+    text-decoration: underline;
+}
+main{
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    gap:20px;
+    margin-top:25px;
+}
+section,aside{
+    background:var(--deck-color);
+    border:3px dashed var(--border);
+    padding:20px;
+    align-self: start;
+}
+.card{
+    background:var(--paper);
+    border:5px solid #000000;
+    padding:20px;
+    margin-bottom: 18px;
+    text-align: center;
+    border-radius: 50px;
+    width:fit-content;
+    margin: auto;
+    margin-top: 2%;
+}
+.card img{
+    width: 80%;
+}
+.card video{
+    display:inline;
+    border-radius: 25px;
+    width: 100%;
+    height:auto;
+    margin: auto;
+}
+.card h5{
+    margin: 1em;
+}
+footer{
+    margin-top:25px;
+    text-align:center;
+    border-top:2px dashed #999;
+    padding:20px;
+    color:#555;
+    font-size:0.9rem;
+}
+iframe{
+    border-radius: 25px;
+}
+
+</style>
+
+
+</head>
+<body>
+    <header>
+        
+        <h1>TECLADO Y TINTA</h1>
+        <h2>El bloc personal web de adrygofio</h2>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#">Blog</a>
+            <a href="#">Proyectos</a>
+            <a href="#">Redes</a>
+        
+        </nav>
+    </header>
+
+<main>
+<section id="index-section">
+    <h2>El Autor</h2>
+    <p>
+        El pequeño bloc de notas de un triste fantasmita.
+    </p>
+    <hr>
+    <div>
+        <h2>Índice</h2>
+        <ul>
+            <li><a href="#minecraft-deck">Minecraft</a></li>
+            <li><a href="#undertale-deck">Undertale</a></li>
+        </ul>
+    </div>
+</section>
+
+
+
+<section id="main-section">
+<div class="deck" id="welcome-deck">
+    <h2>Bienvenido</h2>
+    <p>
+    Texto de ejemplo.
+    </p>
+</div>
+
+<hr>
+
+<div class="deck" id="minecraft-deck">
+    <h2 class="deck-header">MINECRAFT</h2>
+    <div class="card">
+        <h4>Pueblo Kebab</h4>
+        <h5>Temporada 1</h5>
+        <a href="mc-pueblokebab.html"><img src="misc/titulo_pueblo.png" alt="Minecraft: Pueblo Kebab"></a>
+    </div>
+    <div class="card">
+        <h4>Las Épicas Aventuras de Timmy y sus Amigos</h4>
+        <h5>OVA 1</h5>
+        <a href="mc-timmyova.html"><img src="misc/titulo_timmy.png" alt="Minecraft: Las Épicas Aventuras de Timmy y sus Amigos"></a>
+    </div>
+    <div class="card">
+        <h4>Valle Kebab</h4>
+        <h5>Temporada 2</h5>
+        <a href="mc-vallekebab.html"><img src="misc/titulo_valle.png" alt="Minecraft: Valle Kebab"></a>
+    </div>
+    <div class="card">
+        <h4>Kebab Mixto</h4>
+        <h5>Temporada 3</h5>
+        <a href="mc-kebabmixto.html"><img src="misc/kebabmixto2k.png" alt="Minecraft: Kebab Mixto"></a>
+    </div>
+    <div class="card">
+        <h4>Mundo Magua</h4>
+        <h5>Temporada final</h5>
+        <a href="mc-eternalia.html"><img src="misc/minecraft-eternalia-title.png" alt="Minecraft: Mundo Magua"></a>
+    </div>
+    <div class="card">
+        <h4>Mapa de aventuras Diminutos V</h4>
+        <h5>Minecraft 1.13<br>Una aventura donde eres chiquito.</h5>
+        <a href="https://drive.google.com/file/d/1rGIQbdtWExr4GPaHtqflFZpI9Q3OS2I0/view?usp=sharing" target="_blank" title="Descargar Mapa Diminutos V" rel="noreferrer">
+            <img src="misc/minecraft-diminutos-v.png" alt="Descargar mapa" width="400px"></a>
+    </div>
+    <div class="card">
+        <h4>Paquete de texturas<br>Maricón Edition</h4>
+        <h5>Minecraft 1.21<br>Reemplaza algunos sonidos del<br>juego por otros más graciosos.</h5>
+        <a href="https://drive.google.com/file/d/1D12RAn1pFjOUPuCWrSWLNN_4BDRX279X/view?usp=sharing" target="_blank" title="Descargar Maricón Texturas" rel="noreferrer">
+            <img src="misc/maricon texturas.png" alt="Descargar paquete de texturas" width="400px"></a>
+    </div>
+    
+</div>
+
+<hr>
+
+<div class="deck" id="undertale-deck">
+    <h2 class="deck-header">UNDERTALE</h2>
+    <h3>Serie de la <i>'academia de doblaje'</i></h3>
+    <div class="card">
+        <h5>YouTube</h5>
+        <iframe width="448" height="252" src="https://www.youtube.com/embed/videoseries?si=v2RlxfLKB7IPbyUi&amp;list=PLyROfgDFwRtmP81t3Z3LUTww0kMYr7f-5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>https://youtube.com/playlist?list=PLyROfgDFwRtmP81t3Z3LUTww0kMYr7f-5&si=iuxuWf-t79Lkqspo</iframe>
+    </div>
+
+    <h3>Archivos</h3>
+    <div class="card">
+        <h5>Neutral</h5>
+        <a href="https://drive.google.com/file/d/1of_CgoRrzVccfSQeCSETmtdRrIL71jtU/view?usp=sharing" target="_blank" title="Undertale: Ruta Neutral">
+            <video alt="Undertale: Ruta Neutral" autoplay muted loop>
+                <source src="misc/Intro_Friends-1.webm" type="video/webm">
+            </video></a>
+    </div>
+    <div class="card">
+        <h5>Pacifista</h5>
+        <a href="https://drive.google.com/file/d/1HzYz1kEWRg9IY8hrtqlphqMQkzLlJyzq/view?usp=sharing" target="_blank" title="Undertale: Ruta Pacifista">
+            <video alt="Undertale: Ruta Pacifista" poster="misc/ut_bueno.png" autoplay muted loop>
+                <source src="misc/intro_evangelion.webm" type="video/webm">
+            </video></a>
+    </div>
+    <div class="card">
+        <h5>Genocida</h5>
+        <a href="https://drive.google.com/file/d/1rmYkcxsP_VI91JMe17aS6PWiHlNSgiqC/view?usp=sharing" target="_blank" title="Undertale: Ruta Genocida">
+            <video alt="Undertale: Ruta Genocida" poster="misc/ut_malo.png" autoplay muted loop>
+                <source src="misc/intro_genocida.webm" type="video/webm">
+            </video></a>
+    </div>
+
+</div>
+
+<hr>
+
+
+</section>
+
+<aside id="about-section">
+    <h3>Sobre mí</h3>
+    <p>Tengo colesterol bajo</p>
+    <hr>
+    <h3>Mis redes</h3>
+    <ul>
+        <li><a href="#deck">Youtube</a></li>
+        <li><a href="#">Twitter/X</a></li>
+    </ul>
+    <hr>
+    <h3>Mis videojuegos</h3>
+    <ul>
+        <li><a href="https://adrygofio.github.io/yankeetale/" target="_blank">YANKEETALE</a></li>
+        <li><a href="https://adrygofio.github.io/cncm/" target="_blank">Cinco Noches con Marico</a></li>
+    </ul>
+    
+</aside>
+
+    
+
+    
+</main>
+
+
+<footer>
+    (c) adrygofio 2026
+</footer>
+</body>
+</html>
