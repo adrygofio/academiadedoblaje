@@ -24,22 +24,22 @@ const fotos = [
 // Funciones boton de descarga
 function onHover() {
     $("#download_button")
-        .attr('src',"misc/download_minecraft_select.png");
+        .attr('src',"/misc/download_minecraft_select.png");
   }
   
 function offHover() {
     $("#download_button")
-        .attr('src', "misc/download_minecraft.png");
+        .attr('src', "/misc/download_minecraft.png");
   }
 
 function onHover_back() {
     $("#back_button")
-        .attr('src',"misc/back_button_selected.png");
+        .attr('src',"/misc/back_button_selected.png");
   }
   
 function offHover_back() {
     $("#back_button")
-        .attr('src', "misc/back_button.png");
+        .attr('src', "/misc/back_button.png");
   }
 
 function clickImage() {
@@ -67,6 +67,7 @@ function render_gallery(){
     const img=document.createElement("img");
     img.src=root+fotos[i].src;
     img.className="picture";
+    img.loading="lazy";
     img.onclick=()=>abrir(i);
     gallery.appendChild(img);
   }
@@ -134,9 +135,6 @@ function abrir(i){
 	index=i;
 
 	lbImage.src=root+fotos[index].src;
-  if(fotos[index].text=="") {
-    description.textContent = "-";
-  } else
   description.textContent = fotos[index].text;
 
 	lightbox.classList.add("show");
@@ -162,9 +160,6 @@ function lbAnterior(){
 	if(index<=0) return;
 	index--;
 	lbImage.src = root+fotos[index].src;
-  if(fotos[index].text=="") {
-    description.textContent = "-";
-  } else
   description.textContent = fotos[index].text;
   
 	precargar();

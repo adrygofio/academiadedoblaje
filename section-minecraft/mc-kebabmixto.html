@@ -16,11 +16,11 @@
 		<link rel="stylesheet" href="style_mundo.css">
 		<link rel="stylesheet" href="foto_config.css">
 		<!-- JS -->
-		<script src="world_script.js"></script> 
+		<script src="mc_realm.js" defer></script> 
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> <!-- API de JQuery -->
 			<!--Titulo-->
-			<a href="index.html" target="_self" title="Volver a inicio">
-				<img src="misc/kebabmixto2k.png" alt="Minecraft: Mundo Magua" width="800px">
+			<a href="/index.html" target="_self" title="Volver a inicio">
+				<img src="/misc/kebabmixto2k.png" alt="Minecraft: Mundo Magua" width="800px">
 			</a>
 			<h1>Temporada 3</h1>
 			<h4>Iniciado el 6 de agosto de 2024<br>y finalizado 2 días después</h4>
@@ -36,7 +36,7 @@
 	<h2><b>- Descarga del mundo -</b></h3>
 		<div class="descarga">
 			<a href="https://drive.google.com/file/d/1htPHa3FcIMAEzfBH2h1sEO86gOQAqGMP/view?usp=sharing" target="_blank" title="Descargar mundo">
-				<img src="misc/download_minecraft.png" alt="Descargar Mapa" height="80px" id="download_button" onmouseover="onHover();" onmouseout="offHover();" onmousedown="clickImage();"/> 
+				<img src="/misc/download_minecraft.png" alt="Descargar Mapa" height="80px" id="download_button" onmouseover="onHover();" onmouseout="offHover();" onmousedown="clickImage();"/> 
 			</a>
 		</div>
 	</div>
@@ -46,14 +46,34 @@
 	
 	<!-- Fotos -->
 	<h2 id="titulo_center"><b>- Galería -</b></h2>
-	<div class="fotos" id="photos">
-		<script>
-			photo("fotos-kebabmixto/foto_1.png","Casa");
-			photo("fotos-kebabmixto/foto_2.png","Planta baja: Baño y zona de trabajo");
-			photo("fotos-kebabmixto/foto_3.png","Primera planta: Cocina");
-			photo("fotos-kebabmixto/foto_4.png","Segunda planta: Dormitorio y sala de encantamientos");
-		</script>
+
+	<div class="lightbox">
+	
+		<img id="lightbox-image">
+		<p id="description"></p>
+		<button class="lb-btn lb-prev nav prev">&#10094;</button>
+		<button class="lb-btn lb-next nav next">&#10095;</button>
+		<span class="close nav">&times;</span>
+	
 	</div>
+	
+	<div class="carousel">
+		<div class="track"></div>
+	</div>
+	<div id="gallery"></div>
+	
+	<script>
+	let fotos = [];
+	const root = "gallery/fotos-kebabmixto/";
+	
+	async function cargarFotos(){
+		const respuesta = await fetch("gallery-kebabmixto.json");
+		fotos = await respuesta.json();
+		render_gallery();
+	}
+	
+	cargarFotos();
+	</script>
 
 	<footer>
 		<p>Hecho con gofio de trigo y millo</p>

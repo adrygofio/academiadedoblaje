@@ -1,0 +1,180 @@
+#gallery{
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(3,1fr);
+    gap: 15px;
+    margin-bottom:100px;
+    width:80%;
+    max-width: max-content;
+}
+.picture{
+    display: block;
+    width: 100%;
+    border-radius:1vw;
+}
+
+#description{
+    position: absolute;
+    bottom: 0px;
+	color:white;
+	text-align:center;
+    text-shadow: rgb(3, 0, 40) 5px 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 3rem;
+    border-radius: 20px;
+	font-size:1.5em;
+    max-width: 70%;
+}
+
+.carousel{
+    width:900px;
+    overflow:hidden;
+}
+
+.track{
+    display:flex;
+    transition:.4s ease;
+}
+/*
+.slide{
+
+    min-width:70%;
+    margin:0 15%;
+    transition:.3s;
+}
+
+.slide img{
+
+    width:100%;
+    border-radius:15px;
+    cursor:pointer;
+    display:block;
+
+}
+*/
+.nav{
+
+    font-size:45px;
+    background:none;
+    color:white;
+    border:none;
+    cursor:pointer;
+    padding:20px;
+
+}
+
+.nav:hover{
+
+    color:#00bfff;
+
+}
+
+.picture{
+	cursor: pointer;
+}
+
+/* ---------- LIGHTBOX ---------- */
+
+.lightbox{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,.92);
+
+    display:none;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:1000;
+
+}
+
+.lightbox.show{
+
+    display:flex;
+
+}
+
+.lightbox img{
+
+    max-width:90%;
+    max-height:90%;
+}
+
+.close{
+
+    position:absolute;
+
+    top:20px;
+    right:30px;
+
+    font-size:45px;
+    color:white;
+    cursor:pointer;
+
+}
+
+.lb-btn{
+
+    position:absolute;
+
+    background:none;
+    border:none;
+
+    color:white;
+
+    font-size:60px;
+
+    cursor:pointer;
+
+}
+
+.lb-prev{
+
+    left:30px;
+
+}
+
+.lb-next{
+
+    right:30px;
+
+}
+
+
+/***************************
+
+.image__overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    color:white;
+    font-family:sans-serif;
+    display:flex;
+    flex-direction:row;
+    border-radius:10px;
+    opacity:0;
+    transition:0.5s;
+}
+.image__overlay:hover{
+    opacity:1;
+    transition:0.5s;
+    cursor:pointer;
+}
+.image__title{
+    font-size:1em;
+    font-style:normal;
+    margin-left:40px;
+    margin-right:40px;
+    margin-top:40px;
+    margin-bottom:20px;
+    font-family: Minecraft, arial;
+}
+*/

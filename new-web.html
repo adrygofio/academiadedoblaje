@@ -51,7 +51,7 @@ h1{
     font-size: 3rem;
 }
 body{
-    width:clamp(1280px, 80%, 2000px);
+    width:clamp(1280px, 100%, 2000px);
     margin:auto;
     padding:30px;
     
@@ -121,6 +121,15 @@ section,aside{
 .card h5{
     margin: 1em;
 }
+.changelog{
+    max-height: 400px;
+    overflow-y:auto;
+    border:1px solid #000000;
+    font-size: 0.8rem;
+}
+.changelog ul{
+    margin-top: auto;
+}
 footer{
     margin-top:25px;
     text-align:center;
@@ -152,7 +161,7 @@ iframe{
     </header>
 
 <main>
-<section id="index-section">
+<aside id="index-section">
     <h2>El Autor</h2>
     <p>
         El pequeño bloc de notas de un triste fantasmita.
@@ -165,7 +174,7 @@ iframe{
             <li><a href="#undertale-deck">Undertale</a></li>
         </ul>
     </div>
-</section>
+</aside>
 
 
 
@@ -276,7 +285,30 @@ iframe{
         <li><a href="https://adrygofio.github.io/yankeetale/" target="_blank">YANKEETALE</a></li>
         <li><a href="https://adrygofio.github.io/cncm/" target="_blank">Cinco Noches con Marico</a></li>
     </ul>
+    <hr>
     
+    <section id="log-section">
+    <h3>Changelog</h3>
+    <div class="changelog">
+    <article>
+        
+        <u>v1.1 - 05/07/26</u>
+            <ul>
+                <li>Creada la estructura de la página</li>
+                <li>Creada la galería de fotos de los mundos del Minecraft</li>
+                <li>Cosa 03</li>
+                <li>Cosa 04</li>
+            </ul>
+        <u>v1.2 - 06/07/26</u>
+        <ul>
+            <li>Cosa 01</li>
+            <li>Cosa 02</li>
+            <li>Cosa 03</li>
+            <li>Cosa 04</li>
+        </ul>
+
+    </article>
+    </div></section>
 </aside>
 
     
