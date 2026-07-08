@@ -1,10 +1,10 @@
 @font-face{
 	font-family: Minecraft;
-	src:url(/fonts/minecraft-seven.otf);
+	src:url(../fonts/minecraft-seven.otf);
 }
 @font-face{
 	font-family: Mineten;
-	src:url(/fonts/minecraft-ten.ttf);
+	src:url(../fonts/minecraft-ten.ttf);
 }
 @keyframes pan {
 	0% {

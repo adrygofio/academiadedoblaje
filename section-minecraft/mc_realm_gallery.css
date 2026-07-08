@@ -37,23 +37,6 @@
     display:flex;
     transition:.4s ease;
 }
-/*
-.slide{
-
-    min-width:70%;
-    margin:0 15%;
-    transition:.3s;
-}
-
-.slide img{
-
-    width:100%;
-    border-radius:15px;
-    cursor:pointer;
-    display:block;
-
-}
-*/
 .nav{
 
     font-size:45px;
@@ -64,7 +47,6 @@
     padding:20px;
 
 }
-
 .nav:hover{
 
     color:#00bfff;
@@ -144,37 +126,3 @@
     right:30px;
 
 }
-
-
-/***************************
-
-.image__overlay{
-    position:absolute;
-    top:0;
-    left:0;
-    height:100%;
-    width:100%;
-    background:rgba(0,0,0,0.6);
-    color:white;
-    font-family:sans-serif;
-    display:flex;
-    flex-direction:row;
-    border-radius:10px;
-    opacity:0;
-    transition:0.5s;
-}
-.image__overlay:hover{
-    opacity:1;
-    transition:0.5s;
-    cursor:pointer;
-}
-.image__title{
-    font-size:1em;
-    font-style:normal;
-    margin-left:40px;
-    margin-right:40px;
-    margin-top:40px;
-    margin-bottom:20px;
-    font-family: Minecraft, arial;
-}
-*/
