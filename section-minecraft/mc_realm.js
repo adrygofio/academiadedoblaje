@@ -24,28 +24,28 @@ const fotos = [
 // Funciones boton de descarga
 function onHover() {
     $("#download_button")
-        .attr('src',"/misc/download_minecraft_select.png");
+        .attr('src',"../misc/download_minecraft_select.png");
   }
   
 function offHover() {
     $("#download_button")
-        .attr('src', "/misc/download_minecraft.png");
+        .attr('src', "../misc/download_minecraft.png");
   }
 
 function onHover_back() {
     $("#back_button")
-        .attr('src',"/misc/back_button_selected.png");
+        .attr('src',"../misc/back_button_selected.png");
   }
   
 function offHover_back() {
     $("#back_button")
-        .attr('src', "/misc/back_button.png");
+        .attr('src', "../misc/back_button.png");
   }
 
 function clickImage() {
     audio_confirm.play();
   }
-
+/*
 function photo(_url,_msg){
     var codeBlock = "";
     codeBlock +='<a href="'+_url+'" target="_blank">' +
@@ -59,7 +59,7 @@ function photo(_url,_msg){
     codeBlock += '</div></a>';
     document.getElementById("photos").innerHTML += codeBlock;
 }
-
+*/
 function render_gallery(){
   const gallery=document.getElementById("gallery");
 
@@ -88,37 +88,7 @@ const lbNext = document.querySelector(".lb-next");
 const close = document.querySelector(".close");
 
 let index = 0;
-/*
-function render(){
 
-//track.innerHTML="";
-
-for(let i=0;i<fotos.length;i++){
-
-	//if(i<0 || i>=fotos.length) continue;
-
-	//const slide=document.createElement("div");
-
-	//slide.className="slide";
-
-	const gallery=document.createElement("img");
-
-	img.src=fotos[i];
-
-	//img.loading="lazy";
-
-	
-
-	gallery.appendChild(img);
-
-	track.appendChild(slide);
-
-}
-
-//precargar();
-
-}
-*/
 function siguiente(){
 	if(index>fotos.length) return;
 	index++;
@@ -206,7 +176,3 @@ document.addEventListener("keydown",e=>{
 		cerrar();
 	}
 });
-
-
-// PARA MOVILES
-
