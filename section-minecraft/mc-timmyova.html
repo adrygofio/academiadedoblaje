@@ -69,7 +69,9 @@
 		
 		<script>
 		let fotos = [];
-		const root = "gallery/fotos-timmy/";
+		const root = "gallery/fotos-timmy/webp/";
+		const root_lh = "gallery/fotos-timmy/";
+		const file_ext = ".webp";
 		
 		async function cargarFotos(){
 			const respuesta = await fetch("gallery-timmy.json");

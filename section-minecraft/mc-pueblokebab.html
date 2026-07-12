@@ -64,6 +64,8 @@
 <script>
 let fotos = [];
 const root = "gallery/fotos-pueblokebab/";
+const root_lh = root;
+const file_ext = ".png";
 
 async function cargarFotos(){
     const respuesta = await fetch("gallery-pueblokebab.json");

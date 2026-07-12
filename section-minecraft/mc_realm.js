@@ -32,7 +32,7 @@ function render_gallery(){
 
   for(let i=0;i<fotos.length;i++){
     const img=document.createElement("img");
-    img.src=root+fotos[i].src;
+    img.src=root+fotos[i].src+file_ext;
     img.className="picture";
     img.loading="lazy";
     img.onclick=()=>abrir(i);
@@ -71,7 +71,7 @@ function anterior(){
 function abrir(i){
 	index=i;
 
-	lbImage.src=root+fotos[index].src;
+	lbImage.src=root_lh+fotos[index].src+".png";
   description.textContent = fotos[index].text;
 
 	lightbox.classList.add("show");
@@ -90,7 +90,7 @@ function cerrar(){
 function lbSiguiente(){
 	if(index>=fotos.length-1) return;
 	index++;
-	lbImage.src=root+fotos[index].src;
+	lbImage.src=root_lh+fotos[index].src+".png";
   description.textContent = fotos[index].text;
 	precargar();
 }
@@ -98,7 +98,7 @@ function lbSiguiente(){
 function lbAnterior(){
 	if(index<=0) return;
 	index--;
-	lbImage.src = root+fotos[index].src;
+	lbImage.src = root_lh+fotos[index].src+".png";
   description.textContent = fotos[index].text;
   
 	precargar();
@@ -107,11 +107,11 @@ function lbAnterior(){
 function precargar(){
 
 if(index+1<fotos.length){
-	new Image().src = root+fotos[index+1].src;
+	new Image().src = root_lh+fotos[index+1].src+".png";
 }
 
 if(index-1>=0){
-	new Image().src = root+fotos[index-1].src;
+	new Image().src = root_lh+fotos[index-1].src+".png";
 }
 
 }
