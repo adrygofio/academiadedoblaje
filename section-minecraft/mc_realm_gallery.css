@@ -1,16 +1,25 @@
+/*html{
+    scrollbar-gutter: stable;
+}*/
 #gallery{
     display: grid;
     margin: auto;
     grid-template-columns: repeat(3,1fr);
-    gap: 15px;
+    gap: 30px;
     margin-bottom:100px;
-    width:80%;
+    width: clamp(800px, 90%, 2000px);
     max-width: max-content;
+    overflow: show;
 }
 .picture{
     display: block;
     width: 100%;
     border-radius:1vw;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.picture:hover{
+    transform: scale(1.05);
 }
 
 #description{
@@ -18,14 +27,15 @@
     bottom: 0px;
 	color:white;
 	text-align:center;
-    text-shadow: rgb(3, 0, 40) 5px 5px;
-    background-color: rgba(0, 0, 0, 0.5);
+    text-shadow: rgb(3, 0, 40) 3px 3px;
+    background-color: rgba(24, 13, 27, 0.7);
     padding-left: 20px;
     padding-right: 20px;
     line-height: 3rem;
     border-radius: 20px;
+    border: 2px solid rgba(40, 12, 86, 0.5);
 	font-size:1.5em;
-    max-width: 70%;
+    max-width: 70vw;
 }
 
 .carousel{
@@ -52,9 +62,8 @@
     color:#00bfff;
 
 }
-
-.picture{
-	cursor: pointer;
+.no-scroll{
+    overflow: hidden;
 }
 
 /* ---------- LIGHTBOX ---------- */
@@ -83,8 +92,9 @@
 
 .lightbox img{
 
-    max-width:90%;
-    max-height:90%;
+    max-width:90vw;
+    max-height:80vh;
+    object-fit: contain;
 }
 
 .close{

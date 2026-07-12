@@ -1,26 +1,6 @@
 // Audio de confirmacion al dar a descargar mapa
 audio_confirm = new Audio("misc/snd_confirm.mp3");
 
-/*
-const fotos = [
-  {
-    src: "fotos-kebabmixto/foto_1.png",
-    text: "Texto 001"
-  },
-  {
-    src: "fotos-kebabmixto/foto_2.png",
-    text: "Texto 002"
-  },
-  {
-    src: "fotos-kebabmixto/foto_3.png",
-    text: "Texto 003"
-  },
-  {
-    src: "fotos-kebabmixto/foto_4.png",
-    text: "Texto 004"
-  }
-]*/
-
 // Funciones boton de descarga
 function onHover() {
     $("#download_button")
@@ -45,21 +25,8 @@ function offHover_back() {
 function clickImage() {
     audio_confirm.play();
   }
-/*
-function photo(_url,_msg){
-    var codeBlock = "";
-    codeBlock +='<a href="'+_url+'" target="_blank">' +
-                '<div class="image">' +
-                '<img class="image__img" src="'+_url+'" loading="lazy">';
-    if (_msg !== undefined) {
-        codeBlock +='<div class="image__overlay">' +
-                    '<div class="image__title">'+_msg+'</div>' +
-                    '</div>'
-    }
-    codeBlock += '</div></a>';
-    document.getElementById("photos").innerHTML += codeBlock;
-}
-*/
+
+  // Renderizar galería de fotos
 function render_gallery(){
   const gallery=document.getElementById("gallery");
 
@@ -108,6 +75,7 @@ function abrir(i){
   description.textContent = fotos[index].text;
 
 	lightbox.classList.add("show");
+  document.body.classList.add("no-scroll");
 	
 
 	precargar();
@@ -115,6 +83,7 @@ function abrir(i){
 
 function cerrar(){
 	lightbox.classList.remove("show");
+  document.body.classList.remove("no-scroll");
 	description.textContent = "";
 }
 
