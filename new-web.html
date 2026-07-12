@@ -94,7 +94,11 @@ body{
 *{
     box-sizing:border-box;
 }
+/* Clases revelador de secciones*/
 .deck{
+    display: none;
+}
+.deck.reveal{
     display: grid;
 }
 .deck-header{
@@ -123,7 +127,7 @@ section,aside{
 .card{
     background:var(--paper);
     border:20px solid #000000;
-    border-image: url(/misc/download_minecraft.png) 30 stretch;
+    border-image: url(misc/download_minecraft.png) 30 stretch;
     padding:20px;
     margin-bottom: 18px;
     text-align: center;
@@ -165,6 +169,14 @@ footer{
 iframe{
     border-radius: 25px;
 }
+button {
+    font-family: inherit;
+    font-size: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
 
 </style>
 
@@ -196,8 +208,8 @@ iframe{
     <div>
         <h2>Índice</h2>
         <ul>
-            <li><a href="#minecraft">Minecraft</a></li>
-            <li><a href="#undertale">Undertale</a></li>
+            <li><button data-panel="minecraft"><a href="#minecraft">Minecraft</a></button></li>
+            <li><button data-panel="undertale"><a href="#undertale">Undertale</a></button></li>
         </ul>
     </div>
 </aside>
@@ -205,15 +217,19 @@ iframe{
 
 
 <section id="main-section">
-<div class="deck" id="welcome-deck">
+<div id="welcome-deck">
     <h2>Bienvenido</h2>
     <p>
     Texto de ejemplo.
     </p>
-</div>
-
 <hr>
+<h2>Secciones</h2>
+<p>
+    He aquí las siguientes secciones:
+</p>
 
+</div>
+<!--MINECRAFT-->
 <div class="deck" id="minecraft">
     <h2 class="deck-header">MINECRAFT</h2>
     <div class="card">
@@ -254,10 +270,10 @@ iframe{
             <img src="misc/maricon texturas.png" alt="Descargar paquete de texturas" width="400px"></a>
     </div>
     
+    <hr>
 </div>
 
-<hr>
-
+<!--UNDERTALE-->
 <div class="deck" id="undertale">
     <h2 class="deck-header">UNDERTALE</h2>
     <h3>Serie de la <i>'academia de doblaje'</i></h3>
@@ -288,10 +304,10 @@ iframe{
                 <source src="misc/intro_genocida.webm" type="video/webm">
             </video></a>
     </div>
-
+<hr>
 </div>
 
-<hr>
+
 
 
 </section>
@@ -334,8 +350,33 @@ iframe{
     </div></section>
 </aside>
 
-    
+    <!--Script-->
+<script>
 
+
+
+// Mostrador de secciones
+const botones = document.querySelectorAll("button");
+const decks = document.querySelectorAll(".deck");
+
+botones.forEach(boton => {
+
+    boton.addEventListener("click", () => {
+
+        decks.forEach(deck => {
+            deck.classList.remove("reveal");
+            console.log("Revelado");
+        });
+
+        document
+            .getElementById(boton.dataset.panel)
+            .classList.add("reveal");
+
+    });
+
+});
+
+</script>
     
 </main>
 
