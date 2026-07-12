@@ -21,5 +21,5 @@ for %%F in (*.png) do (
 )
 
 echo.
-echo Conversión finalizada.
+echo Conversion finalizada.
 pause

@@ -50,42 +50,41 @@
 		
 		
 	<!--Fotos-->
-		<h2 id="titulo_center"><b>- Galería -</b></h2>
+	<h2 id="titulo_center"><b>- Galería -</b></h2>
 		
-		<div class="lightbox">
-	
-			<img id="lightbox-image">
-			<p id="description"></p>
-			<button class="lb-btn lb-prev nav prev">&#10094;</button>
-			<button class="lb-btn lb-next nav next">&#10095;</button>
-			<span class="close nav">&times;</span>
-		
-		</div>
-		
-		<div class="carousel">
-			<div class="track"></div>
-		</div>
-		<div id="gallery"></div>
-		
-		<script>
-		let fotos = [];
-		const root = "gallery/fotos-timmy/webp/";
-		const root_lh = "gallery/fotos-timmy/";
-		const file_ext = ".webp";
-		
-		async function cargarFotos(){
-			const respuesta = await fetch("gallery-timmy.json");
-			fotos = await respuesta.json();
-			render_gallery();
-		}
-		
-		cargarFotos();
-		</script>
+	<div class="lightbox">
 
-		<video width="600px" controls>
-			<source src="gallery/fotos-timmy/Vlc-Record-2021-08-07-11H48m22s-2021-08-07_11-43-29.Mp4--1.mp4" type="video/mp4"></video>
-		<video width="600px" controls>
-			<source src="gallery/fotos-timmy/arbol_update.mp4" type="video/mp4"></video>
+		<img id="lightbox-image">
+		<p id="description"></p>
+		<button class="lb-btn lb-prev nav prev">&#10094;</button>
+		<button class="lb-btn lb-next nav next">&#10095;</button>
+		<span class="close nav">&times;</span>
+	
+	</div>
+	
+	<div class="carousel">
+		<div class="track"></div>
+	</div>
+	<div id="gallery"></div>
+	
+	<script>
+	let fotos = [];
+	let root = "gallery/fotos-timmy/";
+	let optimize = true;
+	
+	async function cargarFotos(){
+		const respuesta = await fetch("gallery-timmy.json");
+		fotos = await respuesta.json();
+		render_gallery();
+	}
+	
+	cargarFotos();
+	</script>
+
+	<video width="600px" controls>
+		<source src="gallery/fotos-timmy/Vlc-Record-2021-08-07-11H48m22s-2021-08-07_11-43-29.Mp4--1.mp4" type="video/mp4"></video>
+	<video width="600px" controls>
+		<source src="gallery/fotos-timmy/arbol_update.mp4" type="video/mp4"></video>
 	<footer>
 		<p>Hecho con mousse de gofio</p>
 	</footer>

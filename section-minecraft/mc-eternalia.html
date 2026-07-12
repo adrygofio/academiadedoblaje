@@ -123,9 +123,8 @@
 	
 	<script>
 	let fotos = [];
-	const root = "gallery/fotos-eternalia/";
-	const root_lh = root;
-	const file_ext = ".png";
+	let root = "gallery/fotos-eternalia/";
+	let optimize = false;
 	
 	async function cargarFotos(){
 		const respuesta = await fetch("gallery-eternalia.json");

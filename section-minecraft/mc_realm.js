@@ -26,7 +26,15 @@ function clickImage() {
     audio_confirm.play();
   }
 
-  // Renderizar galería de fotos
+  // Comprobar si renderizar galería de fotos optimizada
+
+  let file_ext = ".png";
+  if (optimize == true) {
+	file_ext = ".webp";
+	root = root+"webp/";
+  }
+
+// Renderizar galería de fotos
 function render_gallery(){
   const gallery=document.getElementById("gallery");
 
@@ -71,11 +79,11 @@ function anterior(){
 function abrir(i){
 	index=i;
 
-	lbImage.src=root_lh+fotos[index].src+".png";
+	lbImage.src=root+fotos[index].src+file_ext;
   description.textContent = fotos[index].text;
 
 	lightbox.classList.add("show");
-  document.body.classList.add("no-scroll");
+ 	document.body.classList.add("no-scroll");
 	
 
 	precargar();
@@ -83,23 +91,24 @@ function abrir(i){
 
 function cerrar(){
 	lightbox.classList.remove("show");
-  document.body.classList.remove("no-scroll");
+  	document.body.classList.remove("no-scroll");
 	description.textContent = "";
 }
 
 function lbSiguiente(){
 	if(index>=fotos.length-1) return;
 	index++;
-	lbImage.src=root_lh+fotos[index].src+".png";
-  description.textContent = fotos[index].text;
+	lbImage.src=root+fotos[index].src+file_ext;
+  	description.textContent = fotos[index].text;
+	
 	precargar();
 }
 
 function lbAnterior(){
 	if(index<=0) return;
 	index--;
-	lbImage.src = root_lh+fotos[index].src+".png";
-  description.textContent = fotos[index].text;
+	lbImage.src = root+fotos[index].src+file_ext;
+  	description.textContent = fotos[index].text;
   
 	precargar();
 }
@@ -107,11 +116,11 @@ function lbAnterior(){
 function precargar(){
 
 if(index+1<fotos.length){
-	new Image().src = root_lh+fotos[index+1].src+".png";
+	new Image().src = root+fotos[index+1].src+file_ext;
 }
 
 if(index-1>=0){
-	new Image().src = root_lh+fotos[index-1].src+".png";
+	new Image().src = root+fotos[index-1].src+file_ext;
 }
 
 }

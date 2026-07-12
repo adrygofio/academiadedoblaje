@@ -69,9 +69,8 @@
 	
 	<script>
 	let fotos = [];
-	const root = "gallery/fotos-vallekebab/webp/";
-	const root_lh = "gallery/fotos-vallekebab/";
-	const file_ext = ".webp";
+	let root = "gallery/fotos-vallekebab/";
+	let optimize = true;
 	
 	async function cargarFotos(){
 		const respuesta = await fetch("gallery-vallekebab.json");

@@ -65,8 +65,7 @@
 	<script>
 	let fotos = [];
 	const root = "gallery/fotos-kebabmixto/";
-	const root_lh = root;
-	const file_ext = ".png";
+	let optimize = false;
 	
 	async function cargarFotos(){
 		const respuesta = await fetch("gallery-kebabmixto.json");
