@@ -36,7 +36,7 @@ html{
 	font-family: Minecraft, arial;
 	background-color:rgb(40, 40, 40);
 	background-repeat: repeat;
-	background-size: 100px; 
+	background-size: 150px; 
 	image-rendering: pixelated;
 	color: white;
 	font-size:1.5em;
@@ -65,9 +65,33 @@ h4{
 }
 
 /* EMBBED */
-iframe{
+.youtube-container{
+	position: relative;
+
+}
+.youtube-container iframe{
+	width: 568;
+}
+.youtube-link{
+	display: none;
+}
+
+@media (hover:none) and (pointer: coarse){
+	.youtube-link{
+	display: block;
+	position: absolute;
+	inset: 0;
+	z-index: 10;
+	background: transparent;
+}
+}
+iframe, .video-movil img{
 	float:center;
 	border-radius: 20px;
+
+}
+.video-movil{
+	display: none;
 }
 video{
 	display:block;
@@ -78,7 +102,7 @@ video{
 }
 footer{
 	color: white;
-	font-size: 20px;
+	font-size: 1rem;
 	text-align:center;
 	margin-top:100px;
 	text-decoration: none;
@@ -89,61 +113,79 @@ a{
 
 /* DECLARACIÓN DE CLASES */
 .container{
+	/*
 	display: flex;
 	align-items: center;
+	width: 100%;
+	border: #ffffff solid 10px;
+	*/
+	
+	
+	width: min(1100px, 92%);
+	margin: 0 auto;
+	
+	margin-bottom: 20px;
+	flex-direction: column;
+	gap: 800px;
 }
-
 .bloque{
 	display: flex;
 	align-items: center;
+
 	justify-content: center;
-	padding: 50px;
-	gap: 200px;
-	max-width:min-content;
-	margin: 0 auto;
+
+	gap: 40px;
+	/*width: min(1000px, 90%);*/
 }
 .bloque.offset-1{
-	transform: translateX(-0);
-	margin: 0 auto;
+	transform: translateX(0px);
 }
 .bloque.offset-2{
-	transform: translateX(0%);
-	margin: 0 auto;
+	transform: translateX(0px);
 }
 .bloque.offset-3{
-	transform: translateX(0%);
-	margin: 0 auto;
+	transform: translateX(0px);
 }
 .bloque.offset-4{
-	transform: translateX(0%);
-	margin: 0 auto;
+	transform: translateX(0px);
 }
-
 .invertido{
 	flex-direction: row-reverse;
 }
-.centro{
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-}
 
-.texto {
-    flex: 0 0 500px;
+.eternalia-texto {
+    flex: 2;
+	max-width: 450px;
+
     background-color: #ffffff;
-    padding: 30px;
-	max-width:max-content;
+    padding: 20px;
     text-align: left;
 	text-shadow: 3px 3px rgb(66, 66, 66);
     border-radius: 10px;
 	background-image: url(https://minecraft.wiki/images/BlockSprite_pale-moss-block.png?19851);
 	background-repeat:repeat;
-	background-size: 100%;
+	background-size: 500px;
 }
-.imagen{
-	max-width: 100%;
-	height: auto;
+.eternalia-imagen{
+	flex: 0 0 auto;
+
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.eternalia-imagen img{
 	display: block;
+	width: auto;
+	height: auto;
+
+	max-width: auto;
+	max-height: 250px;
+
+	min-width: 50%;
+	min-height: auto;
+	
+	object-fit: contain;
 }
 
 /* DECLARACIÓN DE ID*/
@@ -161,7 +203,7 @@ a{
 }
 
 /*-------------------------------------------------------------*/
-
+/*
 @media (max-width: 900px) {
     .bloque {
         flex-direction: column;
@@ -172,4 +214,23 @@ a{
         width: 100%;
         max-width: 100%;
     }
+}*/
+
+@media (hover: none) or (pointer: coarse) {
+	html {
+		animation: none;
+	}
+	/*
+	.picture.optimized {
+        opacity: 1 !important; 
+        transform: translateY(0px) !important;
+        transition: none !important;
+    }
+	/*
+	.video-movil {
+		display: block;
+	}
+	iframe {
+		display: none;
+	}*/
 }

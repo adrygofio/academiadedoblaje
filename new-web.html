@@ -66,22 +66,22 @@ h1{
     font-size: 3rem;
 }
 body{
-    width:clamp(1280px, 50%, 2000px);
+    width:clamp(80%, 100%, 0px);
     margin:auto;
     padding:30px;
     background:var(--deck-color);
     color:var(--text);
     line-height:1.4;
 
-    background-size: 10%;
-    background-color: #0f172a;
+
 }
+
 .background{
     position: fixed;
     inset: 0;
     z-index: -1;
-
-    background-image: url("section-minecraft/star-2.svg");
+    background-color: #0f172a;
+    /*background-image: url("section-minecraft/star-2.svg");
     background-repeat: repeat;
     background-size: 80px;
 
@@ -96,7 +96,7 @@ body{
 }
 /* Clases revelador de secciones*/
 .deck{
-    display: none;
+    display: grid; /* poner 'none' para ocular y mostrar en menú lateral */
 }
 .deck.reveal{
     display: grid;
@@ -120,14 +120,19 @@ main{
 }
 section,aside{
     background:var(--deck-color);
-    border:3px dashed var(--border);
-    padding:20px;
+    border:6px solid #62df88;
+    padding:10px;
     align-self: start;
+    border-radius: 80px;
+}.crochet{
+    border: 5px dashed var(--border);
+    border-radius: 70px;
+    padding:20px;
 }
 .card{
     background:var(--paper);
     border:20px solid #000000;
-    border-image: url(misc/download_minecraft.png) 30 stretch;
+    /*border-image: url(misc/download_minecraft.png) 30 stretch;*/
     padding:20px;
     margin-bottom: 18px;
     text-align: center;
@@ -178,7 +183,15 @@ button {
     color: inherit;
 }
 
+@media (hover: none) or (pointer: coarse) {
+    main{
+        grid-template: auto;
+    }
+}
+
 </style>
+
+
 
 
 </head>
@@ -198,26 +211,31 @@ button {
 <!--Background de la página-->
     <div class="background"></div>
 
+
+
 <main>
+<!-- INDEX SECTION -->
 <aside id="index-section">
-    <h2>El Autor</h2>
-    <p>
-        El pequeño bloc de notas de un triste fantasmita.
-    </p>
-    <hr>
-    <div>
-        <h2>Índice</h2>
-        <ul>
-            <li><button data-panel="minecraft"><a href="#minecraft">Minecraft</a></button></li>
-            <li><button data-panel="undertale"><a href="#undertale">Undertale</a></button></li>
-        </ul>
+    <div class="crochet">
+        <h2>El Autor</h2>
+        <p>
+            El pequeño bloc de notas de un triste fantasmita.
+        </p>
+        <hr>
+        <div>
+            <h2>Índice</h2>
+            <ul>
+                <li><button data-panel="minecraft"><a href="#minecraft">Minecraft</a></button></li>
+                <li><button data-panel="undertale"><a href="#undertale">Undertale</a></button></li>
+            </ul>
+        </div>
     </div>
 </aside>
 
 
-
+<!-- MAIN SECTION -->
 <section id="main-section">
-<div id="welcome-deck">
+<div id="welcome-deck" class="crochet">
     <h2>Bienvenido</h2>
     <p>
     Texto de ejemplo.
@@ -309,10 +327,11 @@ button {
 
 
 
-
+<!-- ABOUT SECTION -->
 </section>
 
 <aside id="about-section">
+    <div class="crochet">
     <h3>Sobre mí</h3>
     <p>Tengo colesterol bajo</p>
     <hr>
@@ -328,32 +347,39 @@ button {
         <li><a href="https://adrygofio.github.io/cncm/" target="_blank">Cinco Noches con Marico</a></li>
     </ul>
     <hr>
-    
+    <!-- CHANGELOG SUB-SECTION -->
     <section id="log-section">
     <h3>Changelog</h3>
     <div class="changelog">
     <article>
         
-        <u>v1.1 - 05/07/26</u>
+        <u>v1.1 - 2026/07/05</u>
             <ul>
                 <li>Creada la estructura de la página</li>
                 <li>Creada la galería de fotos de la sección 'Minecraft'</li>
             </ul>
-        <u>v1.2 - 12/07/26</u>
+        <u>v1.2 - 2026/07/12</u>
         <ul>
             <li>Optimizada y mejorada la galería de fotos</li>
             <li>Cambiado el fondo de la página de inicio</li>
             <li>Descubierto que se puede cambiar los bordes de los elementos con una imagen</li>
         </ul>
+        <u>2026/07/18 - v1.3</u>
+        <ul>
+            <li>Añadida una animación fade-in a la galería</li>
+        </ul>
 
     </article>
-    </div></section>
+    </div>
+    </section>
+    </div>
 </aside>
+
+
+
 
     <!--Script-->
 <script>
-
-
 
 // Mostrador de secciones
 const botones = document.querySelectorAll("button");
