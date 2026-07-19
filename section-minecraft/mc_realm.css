@@ -124,7 +124,7 @@ a{
 	width: min(1100px, 92%);
 	margin: 0 auto;
 	
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	flex-direction: column;
 	gap: 800px;
 }
@@ -137,34 +137,49 @@ a{
 	gap: 40px;
 	/*width: min(1000px, 90%);*/
 }
-.bloque.offset-1{
-	transform: translateX(0px);
-}
-.bloque.offset-2{
-	transform: translateX(0px);
-}
-.bloque.offset-3{
-	transform: translateX(0px);
-}
-.bloque.offset-4{
-	transform: translateX(0px);
-}
-.invertido{
+.bloque.invertido{
 	flex-direction: row-reverse;
 }
 
 .eternalia-texto {
     flex: 2;
-	max-width: 450px;
+	max-width: 550px;
+	text-align: justify;
 
-    background-color: #ffffff;
     padding: 20px;
     text-align: left;
 	text-shadow: 3px 3px rgb(66, 66, 66);
-    border-radius: 10px;
+    border-radius: 20px;
+}
+.eternalia-texto.palemoss{
 	background-image: url(https://minecraft.wiki/images/BlockSprite_pale-moss-block.png?19851);
 	background-repeat:repeat;
 	background-size: 500px;
+}
+.eternalia-texto.paleoak{
+	background-image: url(https://minecraft.wiki/images/BlockSprite_pale-oak-leaves.png?542b5);
+	background-repeat:repeat;
+	background-size: 400px;
+}
+.eternalia-texto.cartography{
+	background-image: url(https://minecraft.wiki/images/BlockSprite_cartography-table.png?0c61b);
+	background-repeat:round;
+	background-size: cover;
+}
+.eternalia-texto.netherrack{
+	background-image: url(https://minecraft.wiki/images/BlockSprite_netherrack.png?9335a);
+	background-repeat:repeat;
+	background-size: 500px;
+}
+.eternalia-texto.obsidian{
+	background-image: url(https://minecraft.wiki/images/BlockSprite_obsidian.png?8ba39);
+	background-repeat:repeat;
+	background-size: 500px;
+}
+.eternalia-texto.smoothstone{
+	background-image: url(https://minecraft.wiki/images/BlockSprite_smooth-stone.png?8ee16);
+	background-repeat:round;
+	background-size:cover;
 }
 .eternalia-imagen{
 	flex: 0 0 auto;
@@ -180,7 +195,7 @@ a{
 	height: auto;
 
 	max-width: auto;
-	max-height: 250px;
+	max-height: 350px;
 
 	min-width: 50%;
 	min-height: auto;
